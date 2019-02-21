@@ -8,5 +8,17 @@
     "utility":"Utility",
     "settings":"Setting",
     "lao":"Lao",
-    "english":"English"
+    "english":"English",
+    "share":"Share",
+    "changelanguage":"Change Language",
+    "changePassword":"Change Password",
+    "logOut":"Log Out",
+    "pleaseChooseLanguage":"Please select your language",
+    "pleaseEnterPassword":"Please enter new password",
+    "save":"Save",
+    "forgotpass":"Forgot password ?",
+    "enterTextToSearch":"Enter text to search...",
+    "exitApp":"Do you want to exit ?",
+    "yes":"Yes",
+    "no":"No"
 }

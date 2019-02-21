@@ -4,15 +4,17 @@ import { connect } from 'react-redux' // ຕ້ອງມີການເຊື່
 import I18n from '../i18n/I18n'
 import MainPage from '../routers/TabHomeStack'
 
+
+
 class AppContainer extends Component {
     constructor(props) {
       super(props);
-      let language = 'lo'
+      let language = 'en'
       if (props.localLanguage) {
           language = props.localLanguage;
       }
-      I18n.defaultLocale = language || 'lo'
-      I18n.locale = language || 'lo'
+      I18n.defaultLocale = language || 'en'
+      I18n.locale = language || 'en'
     }
   
     render() {

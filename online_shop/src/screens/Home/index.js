@@ -7,28 +7,30 @@ import { NAV_INDEX } from '../../constants/type'
 import Images from '../../themes/Image'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Colors from '../../themes/Colors'
+import { Header } from 'react-native-elements'
+import LeftComponent from '../../components/LeftComponent'
+import header_style from '../../components/Header/style'
 
 // ສ້າງຕົວປ່ຽນ Array ໂດຍກຳນົດຄ່າເພື່ອເອົາໄປສະແດງໃນ Flatlist ພ້ອມມີ icon
 const SchoolInfo = [
   { id: NAV_INDEX.STAFF, key: 'Clothes', name: 'Clothes', img: Images.icATM },
   { id: NAV_INDEX.TEACHER, key: 'Shoes', name: 'Shoes', img: Images.icCashTransferRound },
   { id: NAV_INDEX.STUDENT, key: 'Sport', name: 'Sport', img: Images.icMoveAtmRound },
-  { id: NAV_INDEX.STAFF, key: 'Fashion', name: 'Fashion', img: Images.icATM },
-  { id: NAV_INDEX.TEACHER, key: 'Adults', name: 'Adults', img: Images.icCashTransferRound },
-  { id: NAV_INDEX.STUDENT, key: 'Child', name: 'Child', img: Images.icMoveAtmRound },
-  { id: NAV_INDEX.TEACHER, key: 'Adults', name: 'Adults', img: Images.icCashTransferRound },
-  { id: NAV_INDEX.STUDENT, key: 'Child', name: 'Child', img: Images.icMoveAtmRound },
+  { id: 4, key: 'Fashion', name: 'Fashion', img: Images.icATM },
+  { id: 5, key: 'Adults', name: 'Adults', img: Images.icCashTransferRound },
+  { id: 6, key: 'Child', name: 'Child', img: Images.icMoveAtmRound },
+  { id: 7, key: 'Adults', name: 'Adults', img: Images.icCashTransferRound },
+  { id: 8, key: 'Child', name: 'Child', img: Images.icMoveAtmRound },
 ]
 
 class HomeScreen extends Component {
 
-  static navigationOptions = {
-    headerRight: (
-      <View style={styles.search_icon}>
-        <Ionicons size={45} name='md-more' color={Colors.white} />
-      </View>
-    )    // ປຸ່ມໃນຕຳແໜ່ງຂອງ Navigation
-  };
+  // static navigationOptions = ({ navigation }) => {
+  //   const { params = {} } = navigation.state
+  //   return {
+  //     header: <CustomNavbar txtTitle={I18n.t('home')}/> 
+  //   }
+  // }
 
   constructor(props) {
     super(props);
@@ -48,11 +50,17 @@ class HomeScreen extends Component {
     )
   }
 
-
   render() {
+    props = this.props
     return (
       <View style={styles.containner}>
-        <FlatList style={{flex:1}}
+        {/* that's ok */}
+        <Header
+          outerContainerStyles={header_style.containHead}
+          leftComponent={<LeftComponent icons_name='ios-menu'  onPress={() => {}}/>}
+          centerComponent={{ text: I18n.t('appName'), style: header_style.head_text }}
+        />
+        <FlatList style={{ flex: 1, margin: 10 }}
           data={SchoolInfo}
           renderItem={({ item }) => this.renderItem(item)}
           keyExtractor={(item, index) => item.id.toString()}
@@ -67,9 +75,7 @@ class HomeScreen extends Component {
 
 // set for call state and update state
 const mapStateToProps = state => ({
-  localLanguage: state.changelanguage.localLanguage,
-  language: state.language,
-  isFetching: state.isFetching
+  changelanguage: state.changelanguage,
 })
 
 // call function redux 

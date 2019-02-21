@@ -5,7 +5,7 @@ import Colors from '../../themes/Colors'
 export default StyleSheet.create({
     containner :{
         flex: 1,
-        margin:Metrics.smallMargin
+        backgroundColor:Colors.basic,
     },
     iconStyle: {
         height: 60 - 5,
@@ -28,7 +28,7 @@ export default StyleSheet.create({
         padding: Metrics.smallMargin,
         marginBottom: Metrics.smallMargin
     },
-    search_icon: {
+    head_icon: {
         marginTop: Metrics.baseMargin,
         marginBottom: Metrics.baseMargin,
         marginRight: Metrics.baseMargin,

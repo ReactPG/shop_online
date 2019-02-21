@@ -1,34 +1,48 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableHighlight, Alert, TouchableOpacity, StyleSheet, Button } from 'react-native';
 import styles from './style'
 import I18n from '../../i18n/I18n'
 import { connect } from 'react-redux'
-
+import Modal from 'react-native-modalbox';
+import Colors from '../../themes/Colors';
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import { NavigationEvents } from 'react-navigation';
+import { Header } from 'react-native-elements'
+import header_style from '../../components/Header/style'
 
 class UtilityScreen extends Component {
-  constructor(props) {
-    super(props);
+
+  constructor() {
+    super();
     this.state = {
+      isDisabled: false,
+      disableWill: true
     };
   }
 
   render() {
+    props = this.props
     return (
-      <View style={styles.containner}>
-        <Text>  {I18n.t('utility')} </Text>
+      <View style={styles.container}>
+        <Header
+          outerContainerStyles={header_style.containHead}
+          centerComponent={{ text: I18n.t('utility'), style: header_style.head_left_text }}
+        />
+        <View style={styles.containerContent}>
+          
+        </View>
       </View>
     );
   }
 }
 
+
 // set for call state and update state
-const mapStateToProps = state => ({
-  localLanguage: state.changelanguage.localLanguage,
-  language: state.language,
-  isFetching: state.isFetching
+const mapStateToProps = (state) => ({
+  changelanguage: state.changelanguage,
 })
 
-// call function redux 
+// call function redux
 const mapDispatchToProps = (dispatch) => {
   return {
     // import from action of the ChangeLanguage

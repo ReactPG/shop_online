@@ -22,9 +22,11 @@ const HomeStack = StackNavigator({
                 shadowOpacity: 0,
                 backgroundColor: Colors.headerColor,
             },
-            title: I18n.t('appName'),
-            headerTintColor: Colors.white
+            // title: I18n.t('appName'),
+            headerTintColor: Colors.white,
+            //header: null   // Hide header for get new header by element 3rd library
         },
+        
     },
     // Staff: {
     //     screen: StaffStack,
@@ -45,7 +47,8 @@ const HomeStack = StackNavigator({
             headerStyle: {
                 // backgroundColor: '#22aedd',
             },
-        }
+        },
+        headerMode:'none'
     }
 )
 
@@ -59,7 +62,7 @@ export default TabNavigator({
     Product: {
         screen: ProductStack, navigationOptions: () => ({
             title: I18n.t('product'),
-            tabBarLabel: I18n.t('product')
+            tabBarLabel: I18n.t('product'),
         })
     },
     Utility: {

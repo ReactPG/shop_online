@@ -8,5 +8,17 @@
     "utility":"ອື່ນໆ",
     "settings":"ຕັ້ງຄ່າ",
     "lao":"ລາວ",
-    "english":"ອັງກິດ"
+    "english":"ອັງກິດ",
+    "share":"ແບ່ງປັນ",
+    "changelanguage":"ປ່ຽນພາສາ",
+    "changePassword":"ປ່ຽນລະຫັດຜ່ານ",
+    "logOut":"ອອກຈາກລະບົບ",
+    "pleaseChooseLanguage":"ກະລຸນາເລືອກພາສາຂອງທ່ານ",
+    "pleaseEnterPassword":"ກະລຸນາປ້ອນລະຫັດໃໝ່",
+    "save":"ບັນທຶກ",
+    "forgotpass":"ລືມລະຫັດຜ່ານ ?",
+    "enterTextToSearch":"ປ້ອນຂໍ້ຄວາມເພື່ອຄົ້ນຫາ...",
+    "exitApp":"ທ່ານຕ້ອງການອອກຈາກລະບົບແທ້ບໍ່ ?",
+    "yes":"ຕົກລົງ",
+    "no":"ຍົກເລີກ"
 }

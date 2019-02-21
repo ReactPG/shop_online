@@ -12,7 +12,7 @@ export default StackNavigator({
             shadowOpacity: 0,
             backgroundColor: Colors.headerColor,
         },
-        title: I18n.t('utility'),
+        // title: I18n.t('utility'),
         headerTintColor: Colors.white,
         tabBarVisible: true,
     }
@@ -22,6 +22,6 @@ export default StackNavigator({
     navigationOptions: props => {
       // title: ' Transfer'
     },
-    headerMode: 'screen'
+    headerMode: 'none'
   })
   
