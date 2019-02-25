@@ -6,11 +6,21 @@ export default StyleSheet.create({
     containHead: {
         backgroundColor: Colors.headerColor,
         height: 60,
+        ...Platform.select({
+            ios: {
+                height: 100
+            }
+        }),
         borderBottomColor: Colors.headerColor
     },
     head_text: {
         color: Colors.white,
-        fontSize: 18
+        fontSize: 18,
+        ...Platform.select({
+            ios: {
+                marginTop: 20
+            }
+        }),
     },
     head_left_text: {
         color: '#fff',

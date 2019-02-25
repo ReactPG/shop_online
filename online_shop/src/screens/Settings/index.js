@@ -5,7 +5,7 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   Image,
-  TextInput
+  TextInput,
 } from 'react-native';
 import styles from './style'
 import I18n from '../../i18n/I18n'
@@ -20,6 +20,8 @@ import header_style from '../../components/Header/style'
 import RightComponent from '../../components/RightComponent'
 import LeftComponent from '../../components/LeftComponent';
 import RNExitApp from 'react-native-exit-app';
+import PushController from '../../components/pushNotification/index';
+import PushNotification from "react-native-push-notification";
 
 
 class SettingsScreen extends Component {
@@ -57,6 +59,17 @@ class SettingsScreen extends Component {
     this.refs.modal4.close()
   }
 
+  _pushNotification = () => {
+    PushNotification.localNotificationSchedule({
+      //... You can use all the options from localNotifications
+      title: "PG Shop",
+      message: "My Notification Message by Gamez", // (required)
+      date: new Date(Date.now() + (5 * 1000)), // in 60 secs
+      // date: new Date(Date.now() + (5 * 1000)).toISOString, // in 60 secs
+    });
+  }
+
+
 
   render() {
     return (
@@ -86,6 +99,17 @@ class SettingsScreen extends Component {
                   <Image source={Images.icShare} color={Colors.white} size={40} style={styles.iconStyle} />
                 </View>
                 <Text style={styles.txtItem}>{I18n.t('share')}</Text>
+              </View>
+              <Ionicons name='ios-arrow-forward' color='#567CDC' size={25} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.groupList}>
+            <TouchableOpacity style={styles.rowContainer} onPress={() => this._pushNotification()}>
+              <View style={styles.warpContentRow}>
+                <View style={styles.warpIconVector}>
+                  <Image source={Images.icShare} color={Colors.white} size={40} style={styles.iconStyle} />
+                </View>
+                <Text style={styles.txtItem}>Test Notification By Game</Text>
               </View>
               <Ionicons name='ios-arrow-forward' color='#567CDC' size={25} />
             </TouchableOpacity>
@@ -153,6 +177,7 @@ class SettingsScreen extends Component {
 
           </Modal>
         </View>
+        <PushController />
       </View>
     );
   }

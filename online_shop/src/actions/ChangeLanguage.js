@@ -8,6 +8,6 @@ export const changeLocalLanguage = (language) =>{
     I18n.locale = language
     return{
         type: CHANGE_LOCAL_LANGUAGE,
-        language
+        payload: language
     }
 }

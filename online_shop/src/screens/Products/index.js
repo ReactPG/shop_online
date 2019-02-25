@@ -90,12 +90,6 @@ const mapStateToProps = state => ({
   changelanguage: state.changelanguage,
 })
 
-// call function redux 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // import from action of the ChangeLanguage
-    // changeLocalLanguage: (language) => { dispatch(changeLocalLanguage(language)) },
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductScreen)
+export default connect(mapStateToProps, null)(ProductScreen)
+
