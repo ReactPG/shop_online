@@ -10,6 +10,7 @@ import Colors from '../../themes/Colors'
 import { Header } from 'react-native-elements'
 import LeftComponent from '../../components/LeftComponent'
 import header_style from '../../components/Header/style'
+import { fetchCategory } from '../../actions/fetchCategory'
 
 // ສ້າງຕົວປ່ຽນ Array ໂດຍກຳນົດຄ່າເພື່ອເອົາໄປສະແດງໃນ Flatlist ພ້ອມມີ icon
 const SchoolInfo = [
@@ -38,6 +39,11 @@ class HomeScreen extends Component {
     };
   }
 
+  componentDidMount = () => {
+    this.props.fetchCategory();
+  }
+  
+
   // ແມ່ນການນຳເອົາຮູບຈາກຕົວປ່ຽນ Array ຊື່ວ່າ SchoolInfo ມາສະແດງເປັນຮູບໃນ Flatlist
   renderItem(item) {
     return (
@@ -50,8 +56,19 @@ class HomeScreen extends Component {
     )
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    if(nextProps.cateReducer.success) {
+      console.log(nextProps.cateReducer)
+    }else {
+      console.log("false")
+    }
+    
+  }
+  
+
   render() {
     props = this.props
+    
     return (
       <View style={styles.containner}>
         {/* that's ok */}
@@ -74,15 +91,19 @@ class HomeScreen extends Component {
 }
 
 // set for call state and update state
-const mapStateToProps = state => ({
-  changelanguage: state.changelanguage,
-})
+const mapStateToProps = state => {
+  return {
+    changelanguage: state.changelanguage,
+    cateReducer: state.cateReducer,
+  };
+}
 
 // call function redux 
 const mapDispatchToProps = (dispatch) => {
   return {
     // import from action of the ChangeLanguage
     changeLocalLanguage: (language) => { dispatch(changeLocalLanguage(language)) },
+    fetchCategory: () => dispatch(fetchCategory()),
   }
 }
 

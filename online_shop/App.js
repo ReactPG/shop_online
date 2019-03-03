@@ -12,6 +12,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 
 import allReducers from './src/reducers'   // ເອົາ Reducer ທັງໝົດມາ
 import createSagaMiddleware from 'redux-saga'
+import rootSaga from './src/saga';
 
 // import rootSaga from './src/sagas'
 
@@ -27,6 +28,7 @@ let store = createStore(persistedReducer, undefined, compose(
   applyMiddleware(sagaMiddleware),
 ));
 let persistor = persistStore(store)
+sagaMiddleware.run(rootSaga)
 
 export default class App extends Component {
   render() {

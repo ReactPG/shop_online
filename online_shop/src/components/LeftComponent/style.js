@@ -8,7 +8,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         // paddingTop: Platform.OS === 'ios' ? 20 : 20,
-        marginTop: 28.9,
+        marginTop: Platform.OS === 'ios' ? 20 : 28.9,
     },
     button: {
         justifyContent: 'center'

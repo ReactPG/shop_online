@@ -10,7 +10,7 @@ class RightComponent extends Component {
         return (
             <View style={[styles.container]}>
                 <TouchableOpacity style={styles.button} onPress={() => this.props.onPress()}>
-                    <Ionicons size={45} name={this.props.icons_name} color={Colors.white} />
+                    <Ionicons size={30} name={this.props.icons_name} color={Colors.white} />
                 </TouchableOpacity>
             </View>
         )

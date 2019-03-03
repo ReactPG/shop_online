@@ -8,7 +8,7 @@ export default StyleSheet.create({
         height: 60,
         ...Platform.select({
             ios: {
-                height: 100
+                height: 80
             }
         }),
         borderBottomColor: Colors.headerColor
