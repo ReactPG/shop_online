@@ -2,6 +2,7 @@ import { takeLatest, put, delay } from "redux-saga/effects";
 import { FETCH_CATEGORY, FETCH_CATEGORY_SUCCESS } from "../constants/type";
 import axios from "axios";
 
+// Call API
 async function callApi() {
     const userData = {
         partnerCode: "bcel",
